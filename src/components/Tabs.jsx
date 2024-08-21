@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 function Tab({ label, to, selected }) {
   return (
@@ -26,7 +26,6 @@ function Tab({ label, to, selected }) {
             position: 'absolute',
             bottom: 0,
             left: 0,
-            top: 65,
             right: 0,
             borderBottom: '3px solid #1976d2',
             zIndex: -1, // Ensure it's behind the tab text
@@ -39,6 +38,7 @@ function Tab({ label, to, selected }) {
 
 export default function BasicTabs() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isSelected = (path) => location.pathname === path;
 
@@ -50,9 +50,7 @@ export default function BasicTabs() {
           display: 'flex',
           height: 80,
           alignItems: 'center',
-          position: 'relative',
-          paddingY: 10,
-          justifyItems: 'flex-end',
+          padding: '10px 0',
         }}
         className="justify-end gap-[10px] px-5"
       >
@@ -61,8 +59,10 @@ export default function BasicTabs() {
         <Tab label="My Quotes" to="/my-quotes" selected={isSelected('/my-quotes')} />
         <Tab label="About Us" to="/about-us" selected={isSelected('/about-us')} />
         <Tab label="Help" to="/help" selected={isSelected('/help')} />
+
         <div className="ml-[10px] px-3 flex gap-[7px] items-center">
           <button
+            onClick={() => navigate('/form')}
             style={{
               padding: '8px 16px',
               marginLeft: '8px',
@@ -80,6 +80,7 @@ export default function BasicTabs() {
             Login
           </button>
           <button
+            onClick={() => navigate('/form')}
             style={{
               padding: '8px 16px',
               marginLeft: '8px',

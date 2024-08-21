@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../assets/Images/logo.png';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -74,16 +76,58 @@ const Navbar = () => {
       {/* Dropdown Menu */}
       {isMenuOpen && (
         <div className="absolute  z-20 top-[68px] right-0 w-full bg-[white] p-5 flex flex-col space-y-4 md:hidden">
-          <a href="#home" className="text-black py-2 border-b-[1px] border-[#9c9c9e] text-[16px] font-[500]">
-          My Order
-          </a>
-          <a href="#shipping" className="text-black py-2 border-b-[1px] border-[#9c9c9e] text-[16px] font-[500]">
-          My Quotes
-          </a>
+          <Link to="/" className="text-black py-2 border-b-[1px] border-[#9c9c9e] text-[16px] font-[500]">
+          Home
+          </Link>
 
-          <a href="#shipping" className="text-black py-2 border-b-[1px] border-[#9c9c9e] text-[16px] font-[500]">
-          My Invoice
-          </a>
+          <Link to="/products" className="text-black py-2 border-b-[1px] border-[#9c9c9e] text-[16px] font-[500]">
+          Products
+          </Link>
+
+          <Link to='/my-quotes' className="text-black py-2 border-b-[1px] border-[#9c9c9e] text-[16px] font-[500]">
+          My Quotes
+          </Link>
+
+          <Link to='/help' className="text-black py-2 border-b-[1px] border-[#9c9c9e] text-[16px] font-[500]">
+          Help 
+          </Link>
+<div className=" flex justify-center gap-[10px] items-center flex-col ">
+
+          <button
+            onClick={() => navigate('/form')}
+            style={{
+              padding: '8px 16px',
+              marginLeft: '8px',
+              fontSize: '16px',
+              height: 50,
+              width: 200,
+              cursor: 'pointer',
+              backgroundColor: '#1976d2',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+            }}
+            className="font-[500]"
+          >
+            Login
+          </button>
+          <button
+            onClick={() => navigate('/form')}
+            style={{
+              padding: '8px 16px',
+              marginLeft: '8px',
+              fontSize: '16px',
+              color: '#1976d2',
+              borderRadius: '4px',
+            }}
+            className="w-[200px] h-[50px] border-[1.5px] border-[#1976d2] rounded-[4px] font-[500]"
+          >
+            Sign Up
+          </button>
+</div>
+
+
+          
         </div>
       )}
     </div>

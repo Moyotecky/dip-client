@@ -1,38 +1,40 @@
 import React from 'react';
 import cardPic from '../assets/Images/cardpic.png';
-import Footer from './Footer';
 
-const Canned  = () => {
+const Canned = () => {
   const products = Array(8).fill({
     title: "S200 Condition Monitoring System",
     image: cardPic,
   });
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="text-[28px] font-[400] text-[black]">CANNED MOTOR PUMPS</div>
-      <div className="mt-[20px] grid grid-cols-2 gap-6 flex-grow">
+    <div className="flex flex-col min-h-screen p-4">
+      <div className="text-2xl font-semibold text-black mb-4">
+        CANNED MOTOR PUMPS
+      </div>
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 flex-grow">
         {products.map((product, index) => (
           <div
             key={index}
-            className="flex justify-around items-center flex-col w-[375px] h-[399px] bg-white rounded-[12px] border-[0.5px] border-[#00000040]"
+            className="flex flex-col bg-white border rounded-lg shadow-md"
           >
-            <div>
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-[246px] mb-[15px] h-[200px]"
-              />
-              <div className="text-[14px] font-[400] text-center text-[black]">
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-full h-48 object-cover rounded-t-lg"
+            />
+            <div className="p-4 flex-grow">
+              <div className="text-sm font-medium text-black mb-2">
                 {product.title}
               </div>
+              <button className="w-full py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                Get Quote
+              </button>
             </div>
-            <button className="w-[335px] h-[50px] rounded-[28px] justify-center items-center flex bg-[#2577EE] text-white font-bold cursor-pointer">
-              Get Quote
-            </button>
           </div>
         ))}
       </div>
+      {/* Uncomment if Footer should be included */}
       {/* <Footer /> */}
     </div>
   );
