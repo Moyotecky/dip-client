@@ -9,10 +9,10 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="w-full z-20 md:-[120px] flex justify-between md:justify-around items-center p-3 bg-[#000D1A]">
+    <div className="w-full  z-20 md:-[120px] flex justify-between md:justify-around items-center p-3 bg-[#000D1A]">
       {/* Logo */}
       <div>
-        <img src={logo} alt="logo" className="w-[90px]  md:w-[120px]" />
+        <img onClick={() => navigate('/')} src={logo} alt="logo" className="w-[90px] cursor-pointer  md:w-[120px]" />
       </div>
 
       {/* Search Bar */}

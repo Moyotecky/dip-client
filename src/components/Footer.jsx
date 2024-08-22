@@ -1,14 +1,16 @@
 import React from 'react';
 import logo from '../assets/Images/logo.png';
 import { FaLocationDot, FaPhone, FaMessage } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div className='w-full bg-[#000D1A]'>
       <div className="p-[20px] md:p-[50px]">
         <div className="flex flex-col md:flex-row justify-start gap-[30px] md:gap-[70px] items-start md:items-center">
           <div className="flex flex-col justify-start">
-            <img src={logo} alt="" className="w-[200px] h-[100px] md:w-[250px] md:h-[120px] mb-[20px]" />
+            <img onClick={()=> navigate('/')} src={logo} alt="" className="w-[200px] cursor-pointer h-[100px] md:w-[250px] md:h-[120px] mb-[20px]" />
             <div className="mb-[5px] text-[#FFFFFFBF] text-[16px] md:text-[20px] font-[400]">Subscribe to our mailing list</div>
             <div className="flex items-center">
               <input

@@ -13,7 +13,7 @@ const Allproducts = () => {
   return (
     <div className="flex flex-col min-h-screen p-4">
       <div className="text-2xl font-bold text-black mb-4">ALL PRODUCTS</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 flex-grow">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 flex-grow">
         {products.map((product, index) => (
           <div
             key={index}

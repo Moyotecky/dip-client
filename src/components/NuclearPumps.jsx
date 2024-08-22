@@ -12,7 +12,7 @@ const NuclearPumps = () => {
       <div className="text-2xl font-semibold text-black mb-4">
         NUCLEAR PUMPS
       </div>
-      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 flex-grow">
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 flex-grow">
         {products.map((product, index) => (
           <div
             key={index}

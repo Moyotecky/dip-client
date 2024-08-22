@@ -58,7 +58,7 @@ const BusinessProfileSidebar = ({ showModal }) => {
             <div
               key={item.id}
               onClick={() => handleNavClick(index)}
-              className={`flex items-center cursor-pointer py-2 px-4 rounded-full ${selectedItem === index ? 'bg-blue-100 text-blue-600' : ''}`}
+              className={`flex items-center cursor-pointer py-2 px-4  ${selectedItem === index ? 'border-b-[3px] border-blue-600 text-blue-600' : ''}`}
             >
               <span className="flex-grow">{item.text}</span>
               <item.icon />
