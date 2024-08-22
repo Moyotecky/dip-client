@@ -17,7 +17,9 @@ const Home = () => {
             <Offer />
             <Features />
             <Sponsors />
+            <div className=" w-full h-[80px] bg-[#fafafa] md:hidden block "></div>
             <Testimonials />
+            <div className=" w-full h-[40px] bg-[#fafafa] md:hidden block "></div>
             <Footer />
         </div>
     )

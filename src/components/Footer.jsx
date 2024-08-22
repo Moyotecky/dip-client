@@ -26,10 +26,10 @@ const Footer = () => {
             <div className="">
               <div className="text-[18px] md:text-[20px] font-[500] text-[#66B3FF] mt-[0px] mb-[20px] md:mb-[30px]">QUICK LINK</div>
               <div className="flex flex-wrap gap-[15px] md:gap-[30px]">
-                <a href="#" className="text-[16px] md:text-[20px] font-[400] text-[#FFFFFFBF]">Home</a>
-                <a href="#" className="text-[16px] md:text-[20px] font-[400] text-[#FFFFFFBF]">My Quotes</a>
-                <a href="#" className="text-[16px] md:text-[20px] font-[400] text-[#FFFFFFBF]">About Us</a>
-                <a href="#" className="text-[16px] md:text-[20px] font-[400] text-[#FFFFFFBF]">Help</a>
+                <a href="/" className="text-[16px] md:text-[20px] cursor-pointer font-[400] text-[#FFFFFFBF]">Home</a>
+                <a href="/my-quotes" className="text-[16px] cursor-pointer md:text-[20px] font-[400] text-[#FFFFFFBF]">My Quotes</a>
+                <a href="/help" className="text-[16px] cursor-pointer md:text-[20px] font-[400] text-[#FFFFFFBF]">About Us</a>
+                <a href="#" className="text-[16px] cursor-pointer md:text-[20px] font-[400] text-[#FFFFFFBF]">Help</a>
               </div>
 
               <div className="text-[18px] md:text-[20px] font-[500] mt-[60px] md:mt-[80px] text-[#66B3FF] mb-[20px] md:mb-[30px]">LEGAL</div>
