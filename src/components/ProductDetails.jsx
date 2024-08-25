@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import pic from "../assets/Images/cardPic.png";
+import pic from "../assets/Images/cardpic.png";
 import { BiChevronLeft } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
