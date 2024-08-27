@@ -11,7 +11,7 @@ const Carousel = ({ slides , otherStyles }) => {
         setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
     return (
-        <div className={`relative z-10 w-[370px]  rounded-[30px] h-[450px] mx-auto mt-[10px] md:w-[600px] md:h-[450px]   md:rounded-br-[0px] md:rounded-tl-[0px] overflow-hidden ${otherStyles} ` }>
+        <div className={`relative z-10 w-[370px]  rounded-[30px] h-[450px] mx-auto mt-[10px] md:w-[560px] md:h-[500px]   md:rounded-br-[0px] md:rounded-tl-[0px] overflow-hidden ${otherStyles} ` }>
             <div
                 className="flex transition-transform ease-out duration-500"
                 style={{ transform: `translateX(-${curr * 100}%)`, width: `${slides.length * 100}%` }}

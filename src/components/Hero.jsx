@@ -17,10 +17,10 @@ const Hero = () => {
     ];
 
     return (
-        <div className="flex justify-center md:mx-0 mx-auto md:justify-around items-center p-10">
-            <div className="w-[650px] md:block hidden  text-[80px] font-[800] text-black">
+        <div className="flex justify-center md:mx-0 mx-auto md:justify-center gap-[30px] items-center p-10">
+            <div className="w-[520px] md:block hidden  text-[70px] font-[800] text-black">
                 We Specialize in <span className="text-[#005AB8]" >Pump And Motors</span>
-                <button onClick={()=> navigate('/products')} className=" w-[400px] h-[60px] bg-[#003871] text-white font-[400] rounded-full text-[20px]  justify-center items-center flex  ">Explore All </button>
+                <button onClick={()=> navigate('/products')} className=" w-[350px] h-[60px] mt-[10px] bg-[#003871] text-white font-[400] rounded-full text-[20px]  justify-center items-center flex  ">Explore All </button>
             </div>
             <div>
                 <Carousel slides={slides} otherStyles='  ' />

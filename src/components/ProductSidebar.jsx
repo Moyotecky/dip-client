@@ -8,7 +8,9 @@ import Canned from './Canned';
 import Condition from './Condition';
 
 const BusinessProfileSidebar = ({ showModal }) => {
-  const [selectedItem, setSelectedItem] = useState(0); // Start with the first item active
+  const [selectedItem, setSelectedItem] = useState(0); 
+  const [searchQuery, setSearchQuery] = useState(""); // Search query state
+
   const icon = BiChevronRight;
 
   const handleNavClick = (index) => {
@@ -27,19 +29,19 @@ const BusinessProfileSidebar = ({ showModal }) => {
   const renderContent = () => {
     switch (selectedItem) {
       case 0:
-        return <Allproducts />;
+        return <Allproducts searchQuery={searchQuery} />; // Pass searchQuery
       case 1:
-        return <NuclearPumps />;
+        return <NuclearPumps searchQuery={searchQuery}  />;
       case 2:
-        return <SpecialityPumps />;
+        return <SpecialityPumps searchQuery={searchQuery}  />;
       case 3:
-        return <Positive />;
+        return <Positive searchQuery={searchQuery}  />;
       case 4:
-        return <Canned />;
+        return <Canned searchQuery={searchQuery}  />;
       case 5:
-        return <Condition />;
+        return <Condition searchQuery={searchQuery}  />;
       default:
-        return <Allproducts />;
+        return <Allproducts searchQuery={searchQuery} />;
     }
   };
 
@@ -50,6 +52,8 @@ const BusinessProfileSidebar = ({ showModal }) => {
           <input
             type="text"
             placeholder="Search..."
+            value={searchQuery} // Bind input to searchQuery
+            onChange={(e) => setSearchQuery(e.target.value)} // Update searchQuery on input change
             className="w-full p-2 border rounded-full border-gray-300"
           />
         </div>
