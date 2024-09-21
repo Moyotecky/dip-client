@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,18 +10,18 @@ const API_BASE_URL = "https://dip-api-v1.onrender.com";
 function EmailVerification({ email }) {
   const { control, setValue, handleSubmit } = useForm({
     defaultValues: {
-      code: ['', '', '', ''] // Ensure default values for the code inputs
+      code: ['', '', '', '']
     }
   });
-  const inputRefs = useRef([]); // Use useRef to store references to the inputs
+  const inputRefs = useRef([]);
   const [isResending, setIsResending] = useState(false);
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit(async (data) => {
     try {
       const codeArray = data.code || [];
-      const code = codeArray.join('').trim(); // Join and trim the code array
+      const code = codeArray.join('').trim();
 
       if (code.length !== 4) {
         setError('Please complete the 4-digit verification code.');
@@ -36,7 +36,7 @@ function EmailVerification({ email }) {
       if (response.status === 200) {
         toast.success("Verification successful! Redirecting to signup...");
         setTimeout(() => {
-          navigate('/signup'); // Redirect to /signup
+          window.location.href = '/signup'; // Refresh the page and navigate
         }, 2000);
       }
     } catch (error) {
@@ -68,16 +68,13 @@ function EmailVerification({ email }) {
       setError(''); // Clear error on valid input
 
       // Automatically move to the next input if not the last one
-      if (index < 3 && value) {
-        inputRefs.current[index + 1]?.focus(); // Move to the next input
+      if (index < 3) {
+        inputRefs.current[index + 1]?.focus();
       }
     } else if (value === "") {
-      // If the value is empty, clear it
       setValue(`code[${index}]`, '');
-    }
-    // Handle deletion with backspace
-    else if (e.nativeEvent.inputType === "deleteContentBackward") {
-      setValue(`code[${index}]`, ''); // Clear the current input
+    } else if (e.nativeEvent.inputType === "deleteContentBackward") {
+      setValue(`code[${index}]`, '');
 
       // Move to the previous input if not the first one
       if (index > 0) {
@@ -103,7 +100,7 @@ function EmailVerification({ email }) {
               control={control}
               render={({ field }) => (
                 <input
-                  ref={el => inputRefs.current[index] = el} // Store each input reference
+                  ref={el => inputRefs.current[index] = el}
                   type="text"
                   maxLength={1}
                   className={`w-12 h-12 text-center border ${error ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none`}
@@ -111,7 +108,7 @@ function EmailVerification({ email }) {
                   onChange={(e) => handleChange(index, e)}
                   onKeyDown={(e) => {
                     if (e.key === "Backspace" && !field.value && index > 0) {
-                      inputRefs.current[index - 1]?.focus(); // Go back to the previous input on backspace
+                      inputRefs.current[index - 1]?.focus();
                     }
                   }}
                 />
@@ -125,7 +122,7 @@ function EmailVerification({ email }) {
         <div className="mt-4 flex gap-4">
           <button
             type="button"
-            onClick={onSubmit} // Attach the onSubmit handler directly here
+            onClick={onSubmit}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700"
           >
             Verify
