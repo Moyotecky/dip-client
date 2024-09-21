@@ -94,7 +94,7 @@ const Navbar = () => {
 <div className=" flex justify-center gap-[10px] items-center flex-col ">
 
           <button
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/signup')}
             style={{
               padding: '8px 16px',
               marginLeft: '8px',
@@ -112,7 +112,7 @@ const Navbar = () => {
             Login
           </button>
           <button
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/signup')}
             style={{
               padding: '8px 16px',
               marginLeft: '8px',

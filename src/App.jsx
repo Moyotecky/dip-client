@@ -26,7 +26,7 @@ function App() {
         <Route path="/my-quotes" element={<Qoutes />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/help" element={<Help/>} />
-        <Route path="/form" element={<Forms/>} />
+        <Route path="/signup" element={<Forms/>} />
         <Route path="/product/:id" element={<ProductDetails/>} />
       </Routes>
     </Router>

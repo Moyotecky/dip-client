@@ -62,7 +62,7 @@ export default function BasicTabs() {
 
         <div className="ml-[10px] px-3 flex gap-[7px] items-center">
           <button
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/signup')}
             style={{
               padding: '8px 16px',
               marginLeft: '8px',
@@ -80,7 +80,7 @@ export default function BasicTabs() {
             Login
           </button>
           <button
-            onClick={() => navigate('/form')}
+            onClick={() => navigate('/signup')}
             style={{
               padding: '8px 16px',
               marginLeft: '8px',
