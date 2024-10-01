@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API_BASE_URL = "https://dip-api-v1.onrender.com";
+const API_BASE_URL = "http://localhost:8080";
 
 function SignUp() {
   const [showVerification, setShowVerification] = useState(false);

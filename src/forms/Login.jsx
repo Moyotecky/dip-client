@@ -6,7 +6,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const API_BASE_URL = "https://dip-api-v1.onrender.com";
+const API_BASE_URL = "http://localhost:8080";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -36,9 +36,12 @@ function Login() {
       });
 
       if (response.status === 200) {
+        // Store the token in localStorage
+        localStorage.setItem('token', response.data.token); // Adjust based on your API response
+        localStorage.setItem('user', JSON.stringify(response.data.user))
         toast.success("Login successful! Redirecting...");
         setTimeout(() => {
-          navigate('/product'); // Navigate to /product after successful login
+          navigate('/products'); // Navigate to /product after successful login
         }, 2000);
       }
     } catch (error) {
@@ -81,15 +84,14 @@ function Login() {
         </div>
 
         <div className="mt-8 w-full max-w-lg">
-        <button
-          onClick={handleLogin} // Use onClick for the handler
-          className="w-full h-12 rounded-lg bg-blue-600 text-white font-semibold flex justify-center items-center transition-transform transform hover:scale-105"
-          disabled={loading}
-        >
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
-      </div>
-
+          <button
+            onClick={handleLogin}
+            className="w-full h-12 rounded-lg bg-blue-600 text-white font-semibold flex justify-center items-center transition-transform transform hover:scale-105"
+            disabled={loading}
+          >
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
+        </div>
       </form>
 
       <div className="flex items-center mt-6 w-full max-w-lg">
